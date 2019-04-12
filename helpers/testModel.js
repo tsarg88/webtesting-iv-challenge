@@ -23,7 +23,7 @@ async function remove(id) {
   let find = await findById(id)
   console.log(find)
   if (find.length !== 0) {
-    await db('test').delete().where('id',id)
+    await db('test').delete().where({id})
     return id;
   } else {
     return 0
